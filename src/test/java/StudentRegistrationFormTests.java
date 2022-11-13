@@ -41,6 +41,7 @@ public class StudentRegistrationFormTests {
         $("[class=table-responsive]").shouldBe(Condition.visible);
     }
 
+    @Test
     void fillOnlyRequiredFieldsAndEmail() {
         $("#firstName").setValue(name);
         $("#lastName").setValue(lastName);
