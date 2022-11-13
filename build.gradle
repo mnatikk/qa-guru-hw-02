@@ -10,17 +10,21 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
-    testImplementation 'com.codeborne:selenide:6.3.5'
+    implementation 'org.testng:testng:7.1.0'
+    implementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+    testImplementation (
+            "com.codeborne:selenide:6.9.0",
+            "org.junit.jupiter:junit-jupiter:5.8.2"
+    )
+}
 
+// явно говорим, что будет использоваться  junit5 для тестов
+test {
+    useJUnitPlatform()
 }
 
 tasks.withType(JavaCompiler) {
     options.encoding = 'UTF-8'
-}
-
-test {
-    useJUnitPlatform()
 }
 
 help {
